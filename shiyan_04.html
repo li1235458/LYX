@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广告示例</title>
+<style>
+  /* 左右对联广告样式 */
+  .float-ad {
+    position: fixed;
+    top: 15%;
+    transform: translateY(-50%);
+    z-index: 9999;
+  }
+  
+   .left-ad {
+    left: 0;
+  } 
+  
+  .right-ad {
+    right: 0;
+  }
+  
+  /* 右下角弹窗广告样式 */
+  .popup-ad {
+    position: fixed;
+    right: 20px;
+    bottom: -200px; /* 初始状态隐藏 */
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    transition: bottom 0.5s ease; /* 缓慢出现的动画效果 */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  .nei{
+	text-align: center;
+	font-size: 30px;
+  }
+
+  /* 添加内容，使页面高度超过浏览器窗口 */
+  .content {
+    height: 2000px; /* 设置足够的高度 */
+  }
+</style>
+</head>
+<body>
+	<div class="nei">
+    <h2>广告</h2>
+    <p>广告一词，据考证是外来语。</p>
+    <p>它首先源于拉丁文advertere，其意为注意、诱导及传播。</p>
+    <p>中古英语时代（约公元1300—1475年），演变为Advertise，其含义衍化为“使某人注意到某件事”，或“通知别人某件事，以引起他人的注意”。</p>
+	</div>
+
+<!-- 左右对联广告 -->
+<div class="float-ad left-ad">
+  <img src="img/ad1.jpg" alt="左对联广告">
+  <img src="img/close.png" alt="关闭" class="close-btn" onclick="closeAd('.left-ad')">
+</div>
+
+<div class="float-ad right-ad">
+  <img src="img/ad1.jpg" alt="右对联广告">
+  <img src="img/close.png" alt="关闭" class="close-btn" onclick="closeAd('.right-ad')">
+</div>
+
+<!-- 右下角弹窗广告 -->
+<div id="popupAd" class="popup-ad">
+  <img src="img/ad2.jpg" alt="弹窗广告">
+  <img src="img/close.png" alt="关闭" class="close-btn" onclick="closePopupAd()">
+</div>
+
+<!-- 添加内容，使页面高度超过浏览器窗口 -->
+<div class="content"></div>
+
+<script>
+	//219970717李滢潇
+  // 左右对联广告关闭功能
+  function closeAd(adClass) {
+    var ad = document.querySelector(adClass);
+    ad.style.display = 'none';
+    if (adClass === '.left-ad') {
+      document.querySelector('.right-ad').style.display = 'none'; // 关闭左侧广告时，同时关闭右侧广告
+    } else {
+      document.querySelector('.left-ad').style.display = 'none'; // 关闭右侧广告时，同时关闭左侧广告
+    }
+  }
+
+  // 右下角弹窗广告显示和关闭功能
+  function closePopupAd() {
+    document.getElementById('popupAd').style.bottom = '-200px';
+  }
+
+  window.onload = function() {
+    // 弹窗广告延迟显示
+    setTimeout(function() {
+      document.getElementById('popupAd').style.bottom = '20px';
+    }, 500); // 500毫秒后出现
+  }
+</script>
+</body>
+</html>

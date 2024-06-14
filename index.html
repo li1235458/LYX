@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人网</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f6f7f9;
+      color: #333;
+    }
+    header {
+      background-color: #1e88e5;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    nav {
+      background-color: #2196f3;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #f0f0f0;
+    }
+    section {
+      padding: 40px 20px;
+      background-color: #fff;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #1e88e5;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .portfolio-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .portfolio-item img {
+      max-width: 100%;
+      margin-right: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .portfolio-item-content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    李滢潇的个人网站
+  </header>
+  <nav>
+    <a href="#home">主页</a>
+    <a href="#about">关于我</a>
+    <a href="#portfolio">作业展示</a>
+    <a href="#contact">联系我</a>
+  </nav>
+  <section id="home">
+    <div class="container">
+      <h2>欢迎来到我的个人网站！</h2>
+      <p>这是我展示作业和个人信息的地方。</p>
+    </div>
+  </section>
+  <section id="about">
+    <div class="container">
+      <h2>关于我</h2>
+      <p>我是李滢潇，一个热爱学习和创作的人。</p>
+    </div>
+  </section>
+  <section id="portfolio">
+    <div class="container">
+      <h2>作业展示</h2>
+      <div class="portfolio-item">
+        <img src="img/01.webp" alt="作业1">
+        <div class="portfolio-item-content">
+          <h3>打印三角形</h3>
+          <p>打印三角形。</p>
+          <a href="task_01.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="img/02.webp" alt="作业2">
+        <div class="portfolio-item-content">
+          <h3>使用DOM操作图片。</h3>
+          <p>使用DOM操作图片。</p>
+          <a href="task_02.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="img/03.webp" alt="作业3">
+        <div class="portfolio-item-content">
+          <h3>用键盘操纵坦克。</h3>
+          <p>用键盘操纵坦克。</p>
+          <a href="task3.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="img/JQUERY.webp" alt="作业4">
+        <div class="portfolio-item-content">
+          <h3>使用jQuery修改表格</h3>
+          <p>使用jQuery修改表格</p>
+          <a href="task_04.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="img/JQUERY.webp" alt="作业5">
+        <div class="portfolio-item-content">
+          <h3>使用jQuery制作游戏角色</h3>
+          <p>使用jQuery制作游戏角色</p>
+          <a href="task_05.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="img/JQUERY.webp" alt="作业6">
+        <div class="portfolio-item-content">
+          <h3>选择一个jQuery插件制作demo</h3>
+          <p>选择一个jQuery插件制作demo</p>
+          <a href="task_06.html" target="_blank">查看作业</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h2>联系我</h2>
+      <p>如果您对我的作品或项目有任何疑问或建议，请随时与我联系。</p>
+      <p>Email: email@email.com</p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 个人网站</p>
+  </footer>
+</body>
+</html>

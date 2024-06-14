@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色跑动</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, yellow, orange);
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            /* 隐藏超出部分 */
+            position: relative;
+        }
+
+        #character {
+            width: 50px;
+            height: 50px;
+            background-image: url('img/player3.gif');
+            /* 角色图片路径 */
+            background-size: cover;
+            position: absolute;
+            top: 175px;
+            /* 初始位置 */
+            left: 275px;
+            /* 初始位置 */
+        }
+
+        .star {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            animation: shooting-star 5s linear infinite;
+        }
+
+        .star:before {
+            content: "\2605";
+            /* Unicode编码，表示五角星 */
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+        }
+
+        @keyframes shooting-star {
+            0% {
+                transform: translateX(-50px) translateY(-50px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(calc(100vw + 50px)) translateY(calc(100vh + 50px));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map">
+        <div id="character"></div>
+        <div class="star"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+		// 219970717李滢潇
+        $(document).ready(function () {
+            var character = $('#character');
+            var characterImages = ['img/player1.gif', 'img/playerbig_left.gif'];
+            var currentImageIndex = 0;
+
+            character.dblclick(function () {
+                currentImageIndex = (currentImageIndex + 1) % characterImages.length;
+                character.css('background-image', 'url(' + characterImages[currentImageIndex] + ')');
+            });
+
+            $(document).keydown(function (e) {
+                var position = character.position();
+                var top = position.top;
+                var left = position.left;
+                var step = 10;
+
+                switch (e.which) {
+                    case 87: // W键
+                        character.css('top', top - step);
+                        break;
+                    case 83: // S键
+                        character.css('top', top + step);
+                        break;
+                    case 65: // A键
+                        character.css('left', left - step);
+                        break;
+                    case 68: // D键
+                        character.css('left', left + step);
+                        break;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

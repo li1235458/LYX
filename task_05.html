@@ -16,6 +16,7 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            /* 隐藏超出部分 */
             position: relative;
         }
 
@@ -23,10 +24,13 @@
             width: 50px;
             height: 50px;
             background-image: url('img/player3.gif');
+            /* 角色图片路径 */
             background-size: cover;
             position: absolute;
             top: 175px;
+            /* 初始位置 */
             left: 275px;
+            /* 初始位置 */
         }
 
         .star {
@@ -41,6 +45,7 @@
 
         .star:before {
             content: "\2605";
+            /* Unicode编码，表示五角星 */
             color: white;
             position: absolute;
             top: 0;
@@ -89,15 +94,19 @@
 
                 switch (e.which) {
                     case 87: // W键
+                    case 38: // 上箭头
                         character.css('top', top - step);
                         break;
                     case 83: // S键
+                    case 40: // 下箭头
                         character.css('top', top + step);
                         break;
                     case 65: // A键
+                    case 37: // 左箭头
                         character.css('left', left - step);
                         break;
                     case 68: // D键
+                    case 39: // 右箭头
                         character.css('left', left + step);
                         break;
                 }
